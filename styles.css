@@ -1,32 +1,40 @@
+/* Base settings */
 :root {
   --primary-color: #e67e22;
-  --secondary-color: #fff;
+  --secondary-color: #fdf2e9;
   --text-color: #333;
-  --bg-color: #fdf2e9;
-  --font-base: 1rem;
+  --font-size: 1rem;
 }
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  font-size: var(--font-base);
+  font-size: var(--font-size);
   color: var(--text-color);
-  background-color: var(--bg-color);
   line-height: 1.6;
 }
 
 /* Navbar */
-.nav {
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 5vw;
   background-color: var(--secondary-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary-color);
 }
 
 .nav-links {
@@ -38,7 +46,7 @@ body {
 .nav-links a {
   text-decoration: none;
   color: var(--text-color);
-  font-weight: bold;
+  font-weight: 500;
   transition: color 0.3s;
 }
 
@@ -48,113 +56,114 @@ body {
 
 /* Hero Section */
 .hero {
-  height: 80vh;
-  background: linear-gradient(to right, #fa9e5b, #e67e22);
-  color: var(--secondary-color);
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 5vw;
+  justify-content: space-between;
+  padding: 5rem 5vw;
+  flex-wrap: wrap;
+  background-color: #fff;
 }
 
-.hero-content h1 {
-  font-size: 3rem;
+.hero-text {
+  flex: 1 1 45%;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-.hero-content p {
-  font-size: 1.25rem;
+.hero-text p {
+  font-size: 1.2rem;
   margin-bottom: 2rem;
 }
 
-/* Buttons */
-.btn {
-  display: inline-block;
-  padding: 0.75rem 2rem;
-  border: none;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.primary-btn {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-}
-
-.primary-btn:hover {
-  background-color: #fff4e6;
-}
-
-.secondary-btn {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-}
-
-.secondary-btn:hover {
-  background-color: #cf711f;
-}
-
-/* Features Section */
-.features {
-  padding: 5vh 5vw;
-  background-color: #fff;
+.hero-img {
+  flex: 1 1 45%;
   text-align: center;
 }
 
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+.hero-img img {
+  width: 100%;
+  max-width: 35rem;
+  border-radius: 1rem;
 }
 
-.feature-card {
-  background-color: #fefefe;
+/* Sections */
+.section {
+  padding: 4rem 5vw;
+  background-color: var(--secondary-color);
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.step {
+  flex: 1 1 15rem;
+  background-color: white;
   padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.05);
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
   transition: transform 0.3s;
 }
 
-.feature-card:hover {
+.step:hover {
   transform: translateY(-0.5rem);
 }
 
-/* Services Section */
-.services {
-  padding: 5vh 5vw;
-  background-color: #f8f8f8;
-}
-
-.services ul {
-  list-style: disc;
-  padding-left: 2rem;
-  margin-top: 1.5rem;
-  font-size: 1.1rem;
+.step h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
 }
 
 /* CTA Section */
-.cta {
-  padding: 5vh 5vw;
-  text-align: center;
+.cta-section {
   background-color: var(--primary-color);
-  color: var(--secondary-color);
+  color: white;
+  text-align: center;
+  padding: 4rem 5vw;
 }
 
-.cta p {
-  font-size: 1.25rem;
-  margin: 1rem 0;
+.cta-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: white;
+  color: var(--primary-color);
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #fdf2e9;
+}
+
+.btn-secondary {
+  background-color: white;
+  color: var(--primary-color);
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 2rem;
-  background-color: #333;
-  color: #fff;
+  padding: 2rem 0;
+  background-color: var(--secondary-color);
   font-size: 0.9rem;
 }
